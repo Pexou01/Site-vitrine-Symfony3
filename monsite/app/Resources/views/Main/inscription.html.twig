@@ -1,0 +1,19 @@
+{# empty Twig template #}
+
+{% extends "base.html.twig"%}
+{% block title %}Inscription{% endblock %}
+{% block body %}
+             <div id="confirm" class="container">
+       <div class="row">
+           <div class="col-sm-4">
+               <h2 class="page-header">Inscription</h2>
+ 
+                   {{form_start(form)}}
+                   {{form_widget(form)}}
+                   {{form_end(form)}}
+ 
+           </div>
+       </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+#myCanvas{
+    border-color: red !important; 
+    border: solid;
+    border-width:2px;
+    margin-left: 27%;
+    
+}
+#zone{
+    margin-left: 30% !important;
+  
+}
+#brique{
+    position: absolute;
+}

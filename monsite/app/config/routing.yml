@@ -1,0 +1,13 @@
+
+
+    
+# Ces deux dernières routes n’ont pas de contrôleur
+# c’est Symfony qui se charge de gérer ces actions
+login_check:
+    path: /perso/check_login
+logout_route:
+    path: /perso/logout
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

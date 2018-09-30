@@ -1,0 +1,186 @@
+@font-face {
+    font-family: SeaBalance;
+    src: url('SeaBalance.ttf');
+}
+
+.vignets{
+    font-family: SeaBalance, Helvetica, Arial, sans-serif !important;
+
+    z-index: 10 !important;
+    color: red !important ;
+
+
+}
+.vignets {
+    font-family: SeaBalance, Helvetica, Arial, sans-serif !important;
+    color: #b10e81;
+    opacity: 0;
+    transform: translate(-300px, 0) scale(0);
+    animation: sideSlide .15s forwards;
+}
+
+.carousel-inner{
+    width:100%;
+    margin-top: 10% !important;
+    max-height: 400px !important;
+    margin-left: 25% !important;
+    
+}
+body{
+
+    background-image:url(/bundle/app/public/images/50.jpg) ;
+    background-repeat:no-repeat;
+    background-size: 300% !important;
+    
+}
+
+#imc {
+    margin-top: 10% !important;
+}
+
+#cv {
+    margin-left: 27% !important;
+}
+#cours{
+
+   
+}
+
+
+#pro {
+
+    margin-top: -65% !important;
+    margin-bottom: 65% !important;
+    margin-left: 10% !important;
+    position:relative !important;
+}
+#proj {
+
+    margin-top: -65% !important;
+    margin-bottom: 65% !important;
+    margin-left: 60% !important;
+    position:relative !important;
+}
+#my{
+    margin-top: -70% !important;
+    margin-left: 18% !important;
+}
+#un{
+
+    margin-left: 40%;
+    color: #FEF60A;
+    Font-Weight: Bold;
+}
+#form{
+
+    Font-Weight: Bold !important;
+}
+#confirm{
+
+    color: greenyellow;
+    Font-Weight: Bold;
+    text-align: center;
+    margin-left: 35% !important;
+
+}
+#confirm1{
+    font-size: 40px !important;
+  
+    color: greenyellow;
+    Font-Weight: Bold;
+    text-align: center;
+
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('/bundle/app/public/images/2.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .99;
+    background-size: 100% !important;
+}
+.container {
+    margin-top: 40px;
+}
+.form-signin {
+    margin: 0 auto;
+    max-width: 400px;
+    color: greenyellow !important;
+    font-size : 35px !important;
+}
+#email{
+    background-image:url('/bundle/app/public/images/8.jpg') ;
+}
+#nav{
+    font-family: SeaBalance, Helvetica, Arial, sans-serif !important;
+    font-size: 30px !important;
+    text-align: center !important;
+    opacity: 0.5 !important;
+    color: red !important;
+
+}
+a
+{
+    transition: color 1s !important;
+     opacity: 0.9%;
+
+}
+a:hover
+{
+    color: red !important;
+
+}
+
+#ejs_box2_box {
+    font-family: SeaBalance, Helvetica, Arial, sans-serif !important;
+    background: rgba(0, 0, 0, 0.0) !important;
+    color: #ffcc33;
+
+    font-size : 50px !important;
+    width: 60% !important;
+    height: auto !important;
+    padding:2;
+    margin-left: 27% !important;
+
+}
+#formLogin{
+    display: block;
+    width: 150px;
+    float: left;
+    margin-left: 40%;
+    margin-top: 10%;
+    
+   
+
+}
+#lab {
+    color : red ;
+    font-family: SeaBalance, Helvetica, Arial, sans-serif;
+    font-size: 35px;
+}
+#border {
+     border-color: red ;
+     
+}
+#myCanvas{
+    border-color: red !important; 
+    border: solid;
+    border-width:2px;
+    margin-left: 27%;
+    
+}
+#zone{
+    margin-left: 30% !important;
+  
+}
+#brique{
+    position: absolute;
+}
+#navbarNavAltMarkup{
+    margin-left: 27% !important;
+    opacity: 0.9%;
+}

@@ -1,0 +1,43 @@
+# To get started with security, check out the documentation:
+
+security:
+    # Détermine le ou les fournisseurs
+# d'authentificatio
+    providers:         
+        db_provider:             
+            entity:                 
+                class: AppBundle:User                 
+                property: username
+ 
+        
+    firewalls:
+        # Désactive la sécurité pour les routes de debug
+        # et de profilage ainsi que pour les ressources
+        # statiques
+        dev:
+           pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+           security: false
+        #Accès anonyme au formulaire
+           #de login
+        login:
+          pattern: ^/login$
+          anonymous: ~
+        
+        perso:
+            pattern: ^/perso
+            anonymous: false
+            provider: db_provider
+            form_login:         
+                login_path: login_route             
+                check_path: login_check
+                default_target_path: /perso
+            logout:         
+                path: logout_route             
+                target: / 
+    access_control:
+      - { path: ^/perso , roles: ROLE_USER }
+     
+    encoders:         
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+

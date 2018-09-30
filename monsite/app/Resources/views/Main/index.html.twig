@@ -1,0 +1,82 @@
+{# héritage du fichier basee.html.twig#}
+{% extends "base.html.twig"%}
+
+{# pour changer titre de la page basee.html.twig#}
+{% block title %}
+    Plusieurs projets
+    {% endblock%}   
+
+{# du coup jentoure avec un bloc body pour structurer ma page en lien avec base.html.twig #}
+{% block body %}
+    <div class="container">
+         <div class="row">
+   <div class="col col-xs-2">
+
+<div id="morpion" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/morpion.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Morpion</h5>
+    <p class="card-text">Jeux du morpion en JavaScript ES6</p>
+    <a class="btn btn-danger" href="bundle/app/public/java/Morpion-master.zip">Télécharger Morpion</a>
+    <br><br>
+    <a class="btn btn-danger" href="{{asset("bundle/app/public/morpion/index.html")}}">Test du morpion</a>
+  </div>
+</div>
+    </div>
+  
+  <div class="col col-xs-2 ">
+    <div id="pouce" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/ConvertiPouce.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Convertisseur</h5>
+    <p class="card-text">Convertisseur pouce en cm  en JavaFX</p>
+    <a class="btn btn-danger" href="bundle/app/public/java/App-Convertisseur_pouce_en_cm.zip">Télécharger </a>
+  </div>
+</div>
+    </div>
+     <div class="col col-xs-2 offset-xs-2">
+         <div id="euro" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/convertisseur.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> Euros en Dollars</h5>
+    <p class="card-text">Application convertisseur Euros en Dollars en JavaFX</p>
+   <a class="btn btn-danger" href="bundle/app/public/java/JavaFXConvertir.zip">Télécharger</a>
+  </div>
+</div>
+    </div>
+   
+ <div class="col col-xs-2">
+      <div id="animaux" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/appAnimaux.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Les animaux</h5>
+    <p class="card-text">Application android sur les animaux en Ionic</p>
+   <a class="btn btn-danger" href="bundle/app/public/java/animal-aps-master.zip">Télécharger</a>
+  </div>
+  </div>
+</div>
+   <div class="col col-xs-2 ">
+    <div id="imc" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/IMC.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">IMC</h5>
+    <p class="card-text">Calcul IMC en JavaFX</p>
+    <a class="btn btn-danger" href="bundle/app/public/java/JavaFXIMC.zip">Télécharger </a>
+  </div>
+</div>
+    </div>
+  <div class="col col-xs-2">
+     <div id="php" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/7.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Expression régulière</h5>
+    <p class="card-text">plusieurs expressions régulières</p>
+   <a class="btn btn-danger" href="bundle/app/public/java/exercice_expression_reguliere.zip">Télécharger</a>
+  </div>
+</div>
+ </div>
+ 
+
+{% endblock %}
+
+

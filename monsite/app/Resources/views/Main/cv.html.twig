@@ -1,0 +1,17 @@
+{# héritage du fichier basee.html.twig#}
+{% extends "base.html.twig"%}
+
+{# pour changer titre de la page basee.html.twig#}
+{% block title %}
+    CV
+    {% endblock%}   
+
+{# du coup jentour avec un bloc body pour structuré ma page en lien avec base.html.twig #}
+{% block body %}
+    
+  <img id="cv" src="bundle/app/public/images/cv.png" alt="Card image cap">
+  <a class="btn btn-danger" href="bundle/app/public/java/CV.pdf">Télécharger</a>
+  <br>
+  
+ 
+{% endblock %}

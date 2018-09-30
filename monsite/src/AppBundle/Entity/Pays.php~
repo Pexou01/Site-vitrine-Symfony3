@@ -1,0 +1,128 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Pays
+ *
+ * @ORM\Table(name="pays")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PaysRepository")
+ */
+class Pays
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_pays", type="string", length=255)
+     */
+    private $nomPays;
+    function setId($id) {
+        $this->id = $id;
+    }
+
+     /**
+     *
+     * @ORM\OneToMany(targetEntity="membre", mappedBy="pays")
+     */
+    private $membres;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomPays
+     *
+     * @param string $nomPays
+     *
+     * @return Pays
+     */
+    public function setNomPays($nomPays)
+    {
+        $this->nomPays = $nomPays;
+
+        return $this;
+    }
+
+    /**
+     * Get nomPays
+     *
+     * @return string
+     */
+    public function getNomPays()
+    {
+        return $this->nomPays;
+    }
+
+    /**
+     * Set membres
+     *
+     * @param \AppBundle\Entity\membre $membres
+     *
+     * @return Pays
+     */
+    public function setMembres(\AppBundle\Entity\membre $membres = null)
+    {
+        $this->membres = $membres;
+
+        return $this;
+    }
+
+    /**
+     * Get membres
+     *
+     * @return \AppBundle\Entity\membre
+     */
+    public function getMembres()
+    {
+        return $this->membres;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->membres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add membre
+     *
+     * @param \AppBundle\Entity\membre $membre
+     *
+     * @return Pays
+     */
+    public function addMembre(\AppBundle\Entity\membre $membre)
+    {
+        $this->membres[] = $membre;
+
+        return $this;
+    }
+
+    /**
+     * Remove membre
+     *
+     * @param \AppBundle\Entity\membre $membre
+     */
+    public function removeMembre(\AppBundle\Entity\membre $membre)
+    {
+        $this->membres->removeElement($membre);
+    }
+}

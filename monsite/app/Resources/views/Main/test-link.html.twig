@@ -1,0 +1,79 @@
+{# héritage du fichier basee.html.twig#}
+{% extends 'base.html.twig'%}
+{% block title %}Bienvenue !{% endblock %}
+{# du coup jentour avec un bloc body pour structuré ma page en lien avec base.html.twig #}
+
+{% block body %}
+ 
+{% endblock %}
+
+
+ 
+{% block carousel %}
+    <div class="nav justify-content-center">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-50 " src="bundle/app/public/images/10.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-50" src="bundle/app/public/images/12.jpg" alt="second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-50" src="bundle/app/public/images/13.png" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-50" src="bundle/app/public/images/15.jpg" alt="four slide">
+                </div>
+            </div>
+        </div>
+    </div>
+     
+{% endblock %}
+
+
+ {% block message %}
+ <!-- DEBUT DU SCRIPT -->
+ <DIV id=ejs_box2_box></DIV>
+<script LANGUAGE=JavaScript>
+ejs_box2_message = new Array;
+ejs_box2_message[0] = 'Bienvenue sur mon projet Symfony . Bonne navigation';
+ejs_box2_actual = 0;
+ejs_box2_html_flag = 0;
+
+function ejs_box2_go()
+{
+if(document.getElementById)
+{
+ejs_box2_char = 1;
+ejs_box2_affich(ejs_box2_actual)
+ejs_box2_actual++;
+if(ejs_box2_actual >= ejs_box2_message.length)
+ejs_box2_actual = 0;
+} 
+}
+function ejs_box2_affich(lactual)
+{
+var pix = ejs_box2_message[lactual].charAt(ejs_box2_char);
+if(pix == "<")
+ejs_box2_html_flag = 1;
+if(pix == ">")
+ejs_box2_html_flag = 0;
+var texte = ejs_box2_message[lactual].substring(0,ejs_box2_char);
+document.getElementById("ejs_box2_box").innerHTML = texte;
+if(ejs_box2_char < ejs_box2_message[lactual].length)
+{
+ejs_box2_char++;
+if(ejs_box2_html_flag == 1) 
+ejs_box2_affich(lactual);
+else
+setTimeout("ejs_box2_affich("+lactual+")",50)
+}
+else
+setTimeout("ejs_box2_go()",3000)
+}
+window.onload = ejs_box2_go;
+</script>
+<!-- FIN DU SCRIPT -->.
+{% endblock %}

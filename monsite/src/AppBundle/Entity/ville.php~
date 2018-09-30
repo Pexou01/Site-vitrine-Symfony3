@@ -1,0 +1,120 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ville
+ *
+ * @ORM\Table(name="ville")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\villeRepository")
+ */
+class ville
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    function setId($id) {
+        $this->id = $id;
+    }
+
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_ville", type="string", length=255)
+     */
+    private $nomVille;
+/**
+     *
+     * @ORM\ManyToOne(targetEntity="membre", inversedBy="vile")
+     */
+    private $membres;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomVille
+     *
+     * @param string $nomVille
+     *
+     * @return ville
+     */
+    public function setNomVille($nomVille)
+    {
+        $this->nomVille = $nomVille;
+
+        return $this;
+    }
+
+    /**
+     * Get nomVille
+     *
+     * @return string
+     */
+    public function getNomVille()
+    {
+        return $this->nomVille;
+    }
+
+    /**
+     * Set membre
+     *
+     * @param \AppBundle\Entity\membre $membre
+     *
+     * @return ville
+     */
+    public function setMembre(\AppBundle\Entity\membre $membre = null)
+    {
+        $this->membre = $membre;
+
+        return $this;
+    }
+
+    /**
+     * Get membre
+     *
+     * @return \AppBundle\Entity\membre
+     */
+    public function getMembre()
+    {
+        return $this->membre;
+    }
+
+    /**
+     * Set membres
+     *
+     * @param \AppBundle\Entity\membre $membres
+     *
+     * @return ville
+     */
+    public function setMembres(\AppBundle\Entity\membre $membres = null)
+    {
+        $this->membres = $membres;
+
+        return $this;
+    }
+
+    /**
+     * Get membres
+     *
+     * @return \AppBundle\Entity\membre
+     */
+    public function getMembres()
+    {
+        return $this->membres;
+    }
+}

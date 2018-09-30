@@ -1,0 +1,44 @@
+{# empty Twig template #}
+{% extends 'base.html.twig'%}
+
+{% block title %}Mini jeux{% endblock %}
+
+{% block body %}
+    <h1 style="color: red;">commentaire Sauvegarder</h1>
+{# <a class="btn btn-danger" style="margin-left:45%;" href="{{ url('score') }}">Tableau des Scores </a> #}
+    
+        <div class="container">
+         <div class="row">
+   <div class="col col-xs-2">
+
+<div id="morpion" class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/casse-brique.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Casse Briques</h5>
+    <p class="card-text">Jeu du casse-briques en JavaScript </p>
+   <br>
+    <a class="btn btn-danger" href="{{ url('casse') }}">Jouer au casse-briques</a>
+  </div>
+</div>
+    </div>
+     <div class="col col-xs-2">
+
+<div  class="card" style="width: 18rem;">
+  <img class="card-img-top" src="bundle/app/public/images/2.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">The Snake</h5>
+    <p class="card-text">Jeu du Serpent en JavaScript (Disponible uniquement sur PC/MAC)</p>
+   <br>
+    <a class="btn btn-danger" href="{{ url('my') }}">Jouer au Serpent </a>
+  </div>
+</div>
+    </div>
+  <div style="color:red;">
+                   {{form_start(form)}}
+                   {{form_widget(form)}}
+                   {{form_end(form)}}
+  </div>
+     {% endblock %}
+     
+     
+  

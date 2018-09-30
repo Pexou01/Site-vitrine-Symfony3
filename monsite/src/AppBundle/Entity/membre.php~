@@ -1,0 +1,348 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * membre
+ *
+ * @ORM\Table(name="membre")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\membreRepository")
+ */
+class membre
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="text")
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="text")
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="text")
+     */
+    private $adresse;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="text")
+     */
+    private $ville;
+ /**
+     *
+     * @ORM\ManyToOne(targetEntity="Pays", inversedBy="membres")
+     */
+    private $pays;
+     /**
+     *
+     * @ORM\ManyToOne(targetEntity="Article", inversedBy="membres")
+     */
+    private $article;
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setVile($vile) {
+        $this->vile = $vile;
+    }
+
+         /**
+     *
+     * @ORM\OneToMany(targetEntity="ville", mappedBy="membres")
+     */
+    private $vile;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="text")
+     */
+    private $email;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return membre
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return membre
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return membre
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return membre
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return membre
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set villes
+     *
+     * @param \AppBundle\Entity\ville $villes
+     *
+     * @return membre
+     */
+    public function setVilles(\AppBundle\Entity\ville $villes = null)
+    {
+        $this->villes = $villes;
+
+        return $this;
+    }
+
+    /**
+     * Get villes
+     *
+     * @return \AppBundle\Entity\ville
+     */
+    public function getVilles()
+    {
+        return $this->villes;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->pays = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add pay
+     *
+     * @param \AppBundle\Entity\Pays $pay
+     *
+     * @return membre
+     */
+    public function addPay(\AppBundle\Entity\Pays $pay)
+    {
+        $this->pays[] = $pay;
+
+        return $this;
+    }
+
+    /**
+     * Remove pay
+     *
+     * @param \AppBundle\Entity\Pays $pay
+     */
+    public function removePay(\AppBundle\Entity\Pays $pay)
+    {
+        $this->pays->removeElement($pay);
+    }
+
+    /**
+     * Get pays
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+    /**
+     * Set article
+     *
+     * @param \AppBundle\Entity\Article $article
+     *
+     * @return membre
+     */
+    public function setArticle(\AppBundle\Entity\Article $article = null)
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \AppBundle\Entity\Article
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    /**
+     * Add vile
+     *
+     * @param \AppBundle\Entity\ville $vile
+     *
+     * @return membre
+     */
+    public function addVile(\AppBundle\Entity\ville $vile)
+    {
+        $this->vile[] = $vile;
+
+        return $this;
+    }
+
+    /**
+     * Remove vile
+     *
+     * @param \AppBundle\Entity\ville $vile
+     */
+    public function removeVile(\AppBundle\Entity\ville $vile)
+    {
+        $this->vile->removeElement($vile);
+    }
+
+    /**
+     * Get vile
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVile()
+    {
+        return $this->vile;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param \AppBundle\Entity\Pays $pays
+     *
+     * @return membre
+     */
+    public function setPays(\AppBundle\Entity\Pays $pays = null)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+}

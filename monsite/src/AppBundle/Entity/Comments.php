@@ -1,0 +1,169 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Comments
+ *
+ * @ORM\Table(name="comments")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommentsRepository")
+ */
+class Comments
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="message", type="string", length=255)
+     * 
+     */
+    private $message;
+     /**
+     * @var string
+     * 
+     * @ORM\Column(name="nom", type="string", length=30)
+     * 
+     */
+    private $utilisateur;
+    /**
+     *@ORM\ManyToOne(targetEntity="jeux", inversedBy="comment")
+     * @var type 
+     */
+    private $jeux;
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="comment")
+     */
+    private $user;
+   
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Comments
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        
+    }
+
+    
+
+    
+    
+    /**
+     * Get jeux
+     *
+     * @return \AppBundle\Enity\jeux
+     */
+    public function getJeux()
+    {
+        return $this->jeux;
+    }
+
+    /**
+     * Set message
+     *
+     * @param string $message
+     *
+     * @return Comments
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+
+        return $this;
+    }
+
+    /**
+     * Get message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param string $utilisateur
+     *
+     * @return Comments
+     */
+    public function setUtilisateur($utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return string
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+    
+
+
+
+    /**
+     * Set jeux
+     *
+     * @param \AppBundle\Entity\jeux $jeux
+     *
+     * @return Comments
+     */
+    public function setJeux(\AppBundle\Entity\jeux $jeux = null)
+    {
+        $this->jeux = $jeux;
+
+        return $this;
+    }
+}
